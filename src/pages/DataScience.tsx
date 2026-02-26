@@ -11,7 +11,7 @@ export default function DataScience() {
       <SEO 
         title="Data Science Consulting" 
         description="Unlock the hidden value in your data. Our data science experts build advanced machine learning models and algorithms to solve complex business problems."
-        path="/#/services/data-science"
+        path="/services/data-science"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
@@ -91,10 +91,10 @@ export default function DataScience() {
             ].map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-orange-500 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-50 transition-colors">

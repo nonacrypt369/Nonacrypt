@@ -66,10 +66,10 @@ export default function CoreServices() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               className="group relative bg-slate-50 p-8 rounded-2xl hover:bg-slate-900 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
             >
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 group-hover:scale-110 transition-all duration-300">

@@ -31,7 +31,7 @@ export default function Layout() {
       <main className="flex-grow">
         <Outlet context={{ openContactModal: () => setIsContactModalOpen(true) }} />
       </main>
-      <Footer />
+      <Footer openContactModal={() => setIsContactModalOpen(true)} />
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 

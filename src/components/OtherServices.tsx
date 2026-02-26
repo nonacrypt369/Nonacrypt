@@ -59,10 +59,10 @@ export default function OtherServices() {
           {otherServices.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               className="border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group bg-white flex flex-col h-full"
             >
               <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">

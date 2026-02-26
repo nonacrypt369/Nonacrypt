@@ -1,14 +1,23 @@
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
 interface HeroProps {
   openContactModal: () => void;
 }
 
 export default function Hero({ openContactModal }: HeroProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <div className="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      <div className="absolute inset-0">
+    <div ref={ref} className="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0">
         <img
           className="w-full h-full object-cover opacity-20"
           src="https://picsum.photos/seed/data/1920/1080.webp?blur=2"
@@ -18,7 +27,7 @@ export default function Hero({ openContactModal }: HeroProps) {
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-      </div>
+      </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

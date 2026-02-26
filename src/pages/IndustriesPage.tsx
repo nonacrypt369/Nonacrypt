@@ -140,7 +140,7 @@ export default function IndustriesPage() {
       <SEO 
         title="Industries We Serve" 
         description="We deliver specialized data intelligence and advanced analytics solutions across a wide range of industries."
-        path="/#/industries"
+        path="/industries"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
