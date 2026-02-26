@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import { ArrowRight, Server, Infinity, ShieldCheck, CloudLightning } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function DevOps() {
   const { openContactModal } = useOutletContext<{ openContactModal: () => void }>();
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="Cloud & DevOps Services" 
+        description="Accelerate your software delivery and ensure high availability. Our DevOps engineers implement CI/CD pipelines, automate infrastructure, and optimize cloud environments."
+      />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">

@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import { ArrowRight, BarChart3, Database, LineChart, PieChart } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function DataAnalytics() {
   const { openContactModal } = useOutletContext<{ openContactModal: () => void }>();
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="Data & Analytics Services" 
+        description="Transform your raw data into actionable insights with Nonacrypt's comprehensive data and analytics services."
+      />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">

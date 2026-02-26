@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import WhatWeDo from "../components/WhatWeDo";
 import Challenges from "../components/Challenges";
@@ -15,6 +16,10 @@ export default function Home() {
 
   return (
     <>
+      <SEO 
+        title="Home" 
+        description="Nonacrypt provides cutting-edge Data Analytics, AI Development, Data Science, and Cloud DevOps solutions for modern enterprises."
+      />
       <Hero openContactModal={openContactModal} />
       <WhatWeDo />
       <Challenges />

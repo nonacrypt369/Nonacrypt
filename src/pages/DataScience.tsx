@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import { ArrowRight, BrainCircuit, Network, Cpu, Lightbulb } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function DataScience() {
   const { openContactModal } = useOutletContext<{ openContactModal: () => void }>();
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="Data Science Consulting" 
+        description="Unlock the hidden value in your data. Our data science experts build advanced machine learning models and algorithms to solve complex business problems."
+      />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">

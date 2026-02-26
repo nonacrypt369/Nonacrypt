@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import { ArrowRight, Bot, Sparkles, MessageSquare, Image as ImageIcon } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function AiDevelopment() {
   const { openContactModal } = useOutletContext<{ openContactModal: () => void }>();
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="AI & Generative AI Development" 
+        description="Harness the power of Artificial Intelligence. We build intelligent applications, integrate large language models, and develop custom AI solutions."
+      />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">

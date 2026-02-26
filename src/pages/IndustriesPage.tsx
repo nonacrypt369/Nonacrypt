@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, CheckCircle2, Globe2, Map, Compass } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 const industries = [
   {
@@ -136,6 +137,10 @@ export default function IndustriesPage() {
 
   return (
     <div className="pt-20">
+      <SEO 
+        title="Industries We Serve" 
+        description="We deliver specialized data intelligence and advanced analytics solutions across a wide range of industries."
+      />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
