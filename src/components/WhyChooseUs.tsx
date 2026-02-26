@@ -38,10 +38,14 @@ export default function WhyChooseUs() {
           <div className="relative">
             <div className="absolute inset-0 bg-orange-100 rounded-3xl transform rotate-3 scale-105" />
             <img
-              src="https://picsum.photos/seed/team/800/600"
+              src="https://picsum.photos/seed/team/800/600.webp"
               alt="Nonacrypt Team"
               className="relative rounded-3xl shadow-xl w-full object-cover"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="600"
             />
           </div>
         </div>

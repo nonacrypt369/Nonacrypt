@@ -11,15 +11,18 @@ export default function DataAnalytics() {
       <SEO 
         title="Data & Analytics Services" 
         description="Transform your raw data into actionable insights with Nonacrypt's comprehensive data and analytics services."
+        path="/#/services/data-analytics"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover opacity-20"
-            src="https://picsum.photos/seed/analytics/1920/1080?blur=2"
+            src="https://picsum.photos/seed/analytics/1920/1080.webp?blur=2"
             alt="Data Analytics"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         </div>

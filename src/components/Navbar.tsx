@@ -1,7 +1,6 @@
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface NavbarProps {
   openContactModal: () => void;
@@ -11,8 +10,21 @@ export default function Navbar({ openContactModal }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isHome = location.pathname === "/";
+
+  const handleScrollTo = (id: string) => {
+    setIsOpen(false);
+    if (isHome) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
 
   return (
     <nav className="fixed w-full z-50 bg-white border-b border-slate-200">
@@ -25,13 +37,12 @@ export default function Navbar({ openContactModal }: NavbarProps) {
               </span>
             </Link>
             <div className="hidden md:ml-10 md:flex md:space-x-8">
-              <HashLink
-                smooth
-                to="/#what-we-do"
-                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors"
+              <button
+                onClick={() => handleScrollTo("what-we-do")}
+                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors cursor-pointer bg-transparent border-none"
               >
                 What we do
-              </HashLink>
+              </button>
               
               {/* Services Dropdown */}
               <div 
@@ -39,13 +50,12 @@ export default function Navbar({ openContactModal }: NavbarProps) {
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <HashLink
-                  smooth
-                  to="/#services"
-                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-900 hover:text-orange-600 transition-colors h-full"
+                <button
+                  onClick={() => handleScrollTo("services")}
+                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-900 hover:text-orange-600 transition-colors h-full cursor-pointer bg-transparent border-none"
                 >
                   Services <ChevronDown className="ml-1 w-4 h-4" />
-                </HashLink>
+                </button>
                 
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 w-56 bg-white border border-slate-200 shadow-lg rounded-xl py-2 mt-0">
@@ -63,13 +73,12 @@ export default function Navbar({ openContactModal }: NavbarProps) {
               >
                 Industries <ChevronDown className="ml-1 w-4 h-4" />
               </Link>
-              <HashLink
-                smooth
-                to="/#about-us"
-                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors"
+              <button
+                onClick={() => handleScrollTo("about-us")}
+                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors cursor-pointer bg-transparent border-none"
               >
                 About
-              </HashLink>
+              </button>
             </div>
           </div>
           <div className="hidden md:flex items-center">
@@ -100,17 +109,15 @@ export default function Navbar({ openContactModal }: NavbarProps) {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-slate-200 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="pt-2 pb-3 space-y-1">
-            <HashLink
-              smooth
-              to="/#what-we-do"
-              onClick={() => setIsOpen(false)}
-              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 hover:border-slate-300"
+            <button
+              onClick={() => handleScrollTo("what-we-do")}
+              className="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 hover:border-slate-300 cursor-pointer bg-transparent"
             >
               What we do
-            </HashLink>
+            </button>
             
             <div className="block pl-3 pr-4 py-2 border-l-4 border-orange-500 text-base font-medium text-orange-700 bg-orange-50">
-              <div className="flex justify-between items-center" onClick={() => setIsServicesOpen(!isServicesOpen)}>
+              <div className="flex justify-between items-center cursor-pointer" onClick={() => setIsServicesOpen(!isServicesOpen)}>
                 <span>Services</span>
                 <ChevronDown className={`w-5 h-5 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
               </div>
@@ -131,14 +138,12 @@ export default function Navbar({ openContactModal }: NavbarProps) {
             >
               Industries
             </Link>
-            <HashLink
-              smooth
-              to="/#about-us"
-              onClick={() => setIsOpen(false)}
-              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 hover:border-slate-300"
+            <button
+              onClick={() => handleScrollTo("about-us")}
+              className="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 hover:border-slate-300 cursor-pointer bg-transparent"
             >
               About
-            </HashLink>
+            </button>
             <button
               onClick={() => {
                 setIsOpen(false);

@@ -6,21 +6,21 @@ const cases = [
     client: "Fluke Corporation",
     title: "Long-term software development partnership with Fluke Corporation",
     category: "Architecture Design",
-    image: "https://picsum.photos/seed/case1/600/400",
+    image: "https://picsum.photos/seed/case1/600/400.webp",
   },
   {
     client: "Gogo",
     title:
       "Big Data analytics for improved maintenance and flawless operation of the in-flight internet",
     category: "Digital Transformation",
-    image: "https://picsum.photos/seed/case2/600/400",
+    image: "https://picsum.photos/seed/case2/600/400.webp",
   },
   {
     client: "Cleverbridge",
     title:
       "Driving growth in e-commerce with a comprehensive data analytics solution",
     category: "Data Analytics Strategy",
-    image: "https://picsum.photos/seed/case3/600/400",
+    image: "https://picsum.photos/seed/case3/600/400.webp",
   },
 ];
 
@@ -57,6 +57,10 @@ export default function SuccessStories() {
                   alt={item.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="400"
                 />
                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500" />
               </div>

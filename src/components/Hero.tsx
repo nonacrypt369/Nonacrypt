@@ -11,9 +11,11 @@ export default function Hero({ openContactModal }: HeroProps) {
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover opacity-20"
-          src="https://picsum.photos/seed/data/1920/1080?blur=2"
+          src="https://picsum.photos/seed/data/1920/1080.webp?blur=2"
           alt="Data Background"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
       </div>

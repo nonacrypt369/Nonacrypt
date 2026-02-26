@@ -11,15 +11,18 @@ export default function DataScience() {
       <SEO 
         title="Data Science Consulting" 
         description="Unlock the hidden value in your data. Our data science experts build advanced machine learning models and algorithms to solve complex business problems."
+        path="/#/services/data-science"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover opacity-20"
-            src="https://picsum.photos/seed/datascience/1920/1080?blur=2"
+            src="https://picsum.photos/seed/datascience/1920/1080.webp?blur=2"
             alt="Data Science"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         </div>

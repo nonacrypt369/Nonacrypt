@@ -11,15 +11,18 @@ export default function DevOps() {
       <SEO 
         title="Cloud & DevOps Services" 
         description="Accelerate your software delivery and ensure high availability. Our DevOps engineers implement CI/CD pipelines, automate infrastructure, and optimize cloud environments."
+        path="/#/services/devops"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover opacity-20"
-            src="https://picsum.photos/seed/devops/1920/1080?blur=2"
+            src="https://picsum.photos/seed/devops/1920/1080.webp?blur=2"
             alt="DevOps Services"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         </div>

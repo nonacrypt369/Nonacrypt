@@ -19,6 +19,7 @@ export default function Home() {
       <SEO 
         title="Home" 
         description="Nonacrypt provides cutting-edge Data Analytics, AI Development, Data Science, and Cloud DevOps solutions for modern enterprises."
+        path="/"
       />
       <Hero openContactModal={openContactModal} />
       <WhatWeDo />

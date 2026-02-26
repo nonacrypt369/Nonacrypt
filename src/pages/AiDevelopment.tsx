@@ -11,15 +11,18 @@ export default function AiDevelopment() {
       <SEO 
         title="AI & Generative AI Development" 
         description="Harness the power of Artificial Intelligence. We build intelligent applications, integrate large language models, and develop custom AI solutions."
+        path="/#/services/ai-development"
       />
       {/* Hero Section */}
       <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover opacity-20"
-            src="https://picsum.photos/seed/aidev/1920/1080?blur=2"
+            src="https://picsum.photos/seed/aidev/1920/1080.webp?blur=2"
             alt="AI Development"
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         </div>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import DataAnalytics from "./pages/DataAnalytics";
@@ -23,6 +23,7 @@ export default function App() {
           <Route path="services/ai-development" element={<AiDevelopment />} />
           <Route path="services/devops" element={<DevOps />} />
           <Route path="industries" element={<IndustriesPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </HashRouter>

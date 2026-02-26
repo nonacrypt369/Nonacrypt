@@ -53,10 +53,14 @@ export default function AboutUs() {
             <div className="absolute inset-0 bg-slate-200 rounded-3xl transform -rotate-3 scale-105" />
             <div className="absolute inset-0 bg-orange-100 rounded-3xl transform rotate-2 scale-100" />
             <img
-              src="https://picsum.photos/seed/aboutus/800/800"
+              src="https://picsum.photos/seed/aboutus/800/800.webp"
               alt="About Nonacrypt"
               className="relative rounded-3xl shadow-xl w-full object-cover aspect-square"
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="800"
             />
           </motion.div>
         </div>
